@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html
+  class="dark"
+  lang="es"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Listado con empleos y filtros para encontrar el trabajo de tus sueños"
+    />
+    <link
+      rel="stylesheet"
+      href="../01-ejercicio-html-css/styles.css"
+    />
+    <title>DevJobs - Empleos</title>
+    <script
+      type="module"
+      src="./scripts/script.js"
+    ></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>
+        <a href="../01-ejercicio-html-css/index.html">
+          <svg
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+          DevJobs
+        </a>
+      </h1>
+      <nav>
+        <a href="">Buscar</a>
+        <a
+          href="empleos.html"
+          <!--
+          rel="noopener noreferrer"
+          para
+          que
+          no
+          dar
+          informacion
+          de
+          navegacion
+          al
+          sitio
+          a
+          donde
+          estoy
+          redireccionando
+          --
+        >
+          Empleos
+        </a>
+        <a href="">Empressa</a>
+        <a href="">Salarios</a>
+      </nav>
+      <div>
+        <a href="">Publicar empleo</a>
+        <a href="">Iniciar sesión</a>
+      </div>
+
+      <div>
+        <devjobs-avatar></devjobs-avatar>
+        <!-- <devjobs-avatar username="mdo" size="70"></devjobs-avatar> -->
+      </div>
+    </header>
+    <main>
+      <section class="jobs-search">
+        <h1>Encuetra tu próximo trabajo</h1>
+        <p>Explora miles de oportunidades en el sector de tecnologia</p>
+        <form
+          id="empleos-search-form"
+          role="search"
+        >
+          <div class="search-bar">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-search"
+            >
+              <path
+                stroke="none"
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+              <path d="M21 21l-6 -6" />
+            </svg>
+            <input
+              id="search-text"
+              type="text"
+              placeholder="Buscar trabajos, empresas o habilidades"
+            />
+          </div>
+
+          <div class="search-filters">
+            <select
+              name="technology"
+              id="technology"
+            >
+              <option value="">tecnología</option>
+              <optgroup label="Tecnologias Populares">
+                <option value="javascript">JavaScript</option>
+                <option value="python">Python</option>
+                <option value="react">React</option>
+                <option value="node">Node.js</option>
+                <option value="mobile">Mobile</option>
+                <option value="aws">AWS</option>
+                <option value="qa">QA</option>
+              </optgruop>
+              <hr />
+              <option value="dba">DBA</option>
+              <option value="uxui">UX/UI</option>
+              <option value="java">Java</option>
+              <option value="c#">C#</option>
+              <option value="c#">C++</option>
+            </select>
+
+            <select
+              name="location"
+              id="location"
+            >
+              <option value="">Ubicación</option>
+              <option value="remoto">Remoto</option>
+              <option value="cdmx">Cdad. de Mexico</option>
+              <option value="guadalajara">Guadalajara</option>
+              <option value="madrid">Madrid</option>
+              <option value="bsas">Buenos Aires</option>
+              <option value="bog">Bogota</option>
+              <option value="scl">Santiago de Chile</option>
+            </select>
+
+            <select
+              name="expirience-level"
+              id="expirience-level"
+            >
+              <option value="">Nivel de experiencia</option>
+              <option value="trainee">Trainee</option>
+              <option value="jr">Junior</option>
+              <option value="mid">Mid-level</option>
+              <option value="senior">Senior</option>
+              <option value="lead">Lead</option>
+            </select>
+
+            <span id="filter-select-value" ></span>
+          </div>
+        </form>
+      </section>
+
+      <section>
+        <h2>Resultados de Busqueda</h2>
+        <div class="jobs-listings">
+
+          <!-- aca js renderiza los empleos -->
+        </div>
+      </section>
+
+      <nav class="pagination">
+        <a href="">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"
+          >
+            <path
+              stroke="none"
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+            <path d="M15 6l-6 6l6 6" />
+          </svg>
+        </a>
+        <a
+          href=""
+          class="is-active"
+        >
+          1
+        </a>
+        <a href="">2</a>
+        <a href="">3</a>
+        <a href="">4</a>
+        <a href="">5</a>
+        <a href="">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right">
+            <path
+              stroke="none"
+              d="M0 0h24v24H0z"
+              fill="none" />
+            <path d="M9 6l6 6l-6 6" />
+          </svg>
+        </a>
+      </nav>
+    </main>
+    <footer>
+      <small>© 2025 DevJobs. Todos los derechos reservados.</small>
+    </footer>
+  </body>
+</html>
